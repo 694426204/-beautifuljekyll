@@ -1,8 +1,8 @@
 ###########################################################
 ### Welcome to Beautiful Jekyll!
-### This config file is meant for settings that affect your entire website. When you first
-### set up your website you should go through all these settings and edit them, but after
-### the initial set up you won't need to come back to this file often.
+### 此配置文件用于影响您整个网站的设置。当您第一次
+### 设置您的网站时，应逐一查看这些设置并进行编辑，但在
+### 初始设置之后，您无需经常回到此文件。
 ###########################################################
 
 ############################
@@ -22,7 +22,7 @@ author: Some Person
 navbar-links:
   About Me: "aboutme"
   Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
+    - Beautiful Jekyll: "https://694426204.github.io/Navigation-Website/"
     - Learn markdown: "https://www.markdowntutorial.com/"
   Author's home: "https://deanattali.com"
 
@@ -34,7 +34,7 @@ navbar-links:
 # Remove this parameter if you don't want an image in the navbar
 avatar: "/assets/img/avatar-icon.png"
 
-# By default, the image is cut into a circle. You can disable this behaviour by setting 'round-avatar: false'
+“# 默认情况下，图像被裁切成圆形。您可以通过设置 'round-avatar: false' 来禁用此行为。”
 round-avatar: true
 
 # If you want to have an image logo in the top-left corner instead of having the title of the website,
