@@ -1,16 +1,39 @@
 ---
 layout: page
-title: About me
-subtitle: Why you'd want to go on a date with me
+title: 关于我
+subtitle: 数字江湖中的赛博游侠
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+## 我的故事
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+我曾穿越三次元的重重迷障，于大洋彼岸汲取异域灵气，又在山城雾中顿悟。
 
-What else do you need?
+如今我在数字世界开辟一方天地——锻造名为「脚本」的法器，供各路侠士闯荡江湖之用。
 
-### My story
+白日里我以键盘为剑，在代码的迷宫中斩妖除魔；
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+夜深时我化作文字的信徒，在诗歌与故事的幻境中寻找生命的真意。
+
+若你想知道更多，不妨来我的博客坐坐，或许能在某篇文字里，遇见另一个维度的我。
+
+## 关于我
+
+我叫苍雪，一名在数字江湖中修行的赛博游侠。
+
+**我具备以下特质：**
+
+- 我能在代码与诗行之间自由穿梭，左手执剑调试脚本，右手执笔书写人间烟火
+- 我已参透五行与算法的奥秘，将东方修真智慧与西方技术哲学熔铸一炉
+- 我专注于锻造数字法器，为江湖侠士提供趁手的工具
+
+## 宗门信息
+
+| 属性 | 详情 |
+| :--- | :--- |
+| 宗门名 | 苍雪宗 / 绝世宗门 |
+| 定位 | 数字江湖的法器锻造世家 |
+| 宗门产业 | 脚本出售、技术修行 |
+| 核心成员 | 你（宗主/掌门）... |
+
+{: .box-note}
+因缘际会，只要不死，终会相见。
