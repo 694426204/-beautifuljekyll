@@ -1,9 +1,9 @@
 ---
 layout: page
-title: 'Tag Index'
+title: '标签索引'
 ---
 
-{% assign date_format = site.date_format | default: "%B %-d, %Y" %}
+{% assign date_format = site.date_format | default: "%Y年%-m月%-d日" %}
 
 {%- capture site_tags -%}
     {%- for tag in site.tags -%}

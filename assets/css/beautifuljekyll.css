@@ -26,6 +26,10 @@ layout: null
 
 /* --- General --- */
 
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
 html {
   font-size: 100%
 }
@@ -1046,6 +1050,10 @@ pre {
   font-size: 2rem;
   line-height: 2rem;
   font-weight: bold;
+  background: none;
+  border: none;
+  padding: 0;
+  z-index: 1;
 }
 #nav-search-exit:hover {
   color: #000;
