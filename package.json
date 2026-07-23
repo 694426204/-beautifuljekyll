@@ -1,0 +1,25 @@
+{
+  "name": "beautifuljekyll",
+  "version": "1.0.0",
+  "description": "Beautiful Jekyll 博客主题",
+  "private": true,
+  "scripts": {
+    "build": "bundle install && bundle exec jekyll build",
+    "serve": "bundle exec jekyll serve",
+    "clean": "bundle exec jekyll clean",
+    "deploy:netlify": "netlify deploy --prod --build",
+    "deploy:vercel": "vercel --prod",
+    "deploy:firebase": "firebase deploy --only hosting"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/694426204/-beautifuljekyll.git"
+  },
+  "keywords": [
+    "jekyll",
+    "blog",
+    "static-site"
+  ],
+  "author": "苍雪",
+  "license": "MIT"
+}

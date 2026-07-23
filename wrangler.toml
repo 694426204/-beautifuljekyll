@@ -1,0 +1,13 @@
+# Cloudflare Pages 配置
+# wrangler.toml 用于 Cloudflare Workers/Pages 部署
+
+name = "beautifuljekyll"
+compatibility_date = "2024-01-01"
+
+[site]
+bucket = "./_site"
+
+# 如需自定义域名，取消注释并修改
+# [[routes]]
+# pattern = "yourdomain.com/*"
+# zone_name = "yourdomain.com"

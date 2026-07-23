@@ -1,0 +1,37 @@
+# Netlify 配置文件
+# 用于部署 Jekyll 站点到 Netlify
+
+[build]
+  command = "bundle install && bundle exec jekyll build"
+  publish = "_site"
+
+[build.environment]
+  RUBY_VERSION = "3.2"
+  BUNDLER_VERSION = "2.5"
+
+# 安全头设置
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# 静态资源缓存
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# RSS 重定向
+[[redirects]]
+  from = "/rss"
+  to = "/feed.xml"
+  status = 301
+
+# 404 处理
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
