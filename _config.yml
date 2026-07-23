@@ -295,6 +295,21 @@ exclude:
   - README.md
   - screenshot.png
   - docs/
+  - node_modules/
+  - package.json
+  - package-lock.json
+  - wrangler.toml
+  - .nvmrc
+  - .ruby-version
+  - .git/
+  - .gitignore
+  - netlify.toml
+  - vercel.json
+  - firebase.json
+  - .firebaserc
+
+# Cloudflare Pages 特定文件保留在构建输出中
+# _headers 和 _redirects 会被 Jekyll 自动复制到 _site
 
 plugins:
   - jekyll-paginate

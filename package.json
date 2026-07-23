@@ -5,11 +5,19 @@
   "private": true,
   "scripts": {
     "build": "bundle install && bundle exec jekyll build",
+    "build:prod": "JEKYLL_ENV=production bundle exec jekyll build",
+    "build:cf": "bundle exec jekyll build",
     "serve": "bundle exec jekyll serve",
     "clean": "bundle exec jekyll clean",
     "deploy:netlify": "netlify deploy --prod --build",
     "deploy:vercel": "vercel --prod",
-    "deploy:firebase": "firebase deploy --only hosting"
+    "deploy:firebase": "firebase deploy --only hosting",
+    "pages:dev": "wrangler pages dev ./_site",
+    "pages:deploy": "npm run build:prod && wrangler pages deploy ./_site",
+    "pages:deploy:preview": "npm run build && wrangler pages deploy ./_site --env preview",
+    "pages:deploy:production": "npm run build:prod && wrangler pages deploy ./_site --env production",
+    "cf:login": "wrangler login",
+    "cf:whoami": "wrangler whoami"
   },
   "repository": {
     "type": "git",

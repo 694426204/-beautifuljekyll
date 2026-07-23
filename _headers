@@ -1,0 +1,101 @@
+# Cloudflare Pages HTTP Headers 配置
+# 文档：https://developers.cloudflare.com/pages/configuration/headers/
+
+# ============================================
+# 安全头 (Security Headers)
+# ============================================
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+# ============================================
+# 缓存配置 (Caching)
+# ============================================
+
+# 静态资源长期缓存
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# 图片资源长期缓存
+*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+*.jpeg
+  Cache-Control: public, max-age=31536000, immutable
+*.png
+  Cache-Control: public, max-age=31536000, immutable
+*.gif
+  Cache-Control: public, max-age=31536000, immutable
+*.svg
+  Cache-Control: public, max-age=31536000, immutable
+*.webp
+  Cache-Control: public, max-age=31536000, immutable
+*.ico
+  Cache-Control: public, max-age=31536000, immutable
+
+# 字体文件长期缓存
+*.woff
+  Cache-Control: public, max-age=31536000, immutable
+*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+*.ttf
+  Cache-Control: public, max-age=31536000, immutable
+*.eot
+  Cache-Control: public, max-age=31536000, immutable
+*.otf
+  Cache-Control: public, max-age=31536000, immutable
+
+# CSS 和 JS 中等缓存
+*.css
+  Cache-Control: public, max-age=31536000, immutable
+*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML 页面不缓存，确保内容最新
+*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# feed.xml 较短缓存
+/feed.xml
+  Cache-Control: public, max-age=3600
+
+# sitemap.xml 较短缓存
+/sitemap.xml
+  Cache-Control: public, max-age=3600
+
+# ============================================
+# 内容类型 (Content-Type)
+# ============================================
+
+# 确保正确的 MIME 类型
+*.wasm
+  Content-Type: application/wasm
+
+# ============================================
+# CORS 配置
+# ============================================
+
+# 允许跨域访问字体和图片
+/assets/fonts/*
+  Access-Control-Allow-Origin: *
+
+/assets/img/*
+  Access-Control-Allow-Origin: *
+
+# ============================================
+# 特定页面头
+# ============================================
+
+# 404 页面
+/404.html
+  Cache-Control: public, max-age=3600
+
+# ============================================
+# 预加载提示 (仅信息，不强制执行)
+# ============================================
+/*
+  Link: </assets/css/beautifuljekyll.css>; rel=preload; as=style
+  Link: </assets/js/beautifuljekyll.js>; rel=preload; as=script

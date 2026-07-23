@@ -1,13 +1,47 @@
-# Cloudflare Pages 配置
-# wrangler.toml 用于 Cloudflare Workers/Pages 部署
+# Cloudflare Pages 配置文件
+# 用于通过 Wrangler CLI 部署和管理 Cloudflare Pages 项目
+# 文档：https://developers.cloudflare.com/pages/
 
 name = "beautifuljekyll"
 compatibility_date = "2024-01-01"
 
-[site]
-bucket = "./_site"
+# Pages 项目配置
+[vars]
+ENVIRONMENT = "production"
 
-# 如需自定义域名，取消注释并修改
-# [[routes]]
-# pattern = "yourdomain.com/*"
-# zone_name = "yourdomain.com"
+# Pages 构建配置
+# 在 Cloudflare Pages Dashboard 中配置：
+# - 构建命令：bundle exec jekyll build
+# - 构建输出目录：_site
+# - 根目录：/
+
+# 环境变量（可在 Cloudflare Pages Dashboard 中设置）
+# - JEKYLL_ENV=production
+# - BUNDLE_WITHOUT=development:test
+# - RUBY_VERSION=3.2
+
+# Pages 功能配置
+[ai]
+binding = "AI"
+
+# 如需使用 Pages Functions，取消注释以下部分
+# [[path]]
+# path = "functions"
+
+# 如需自定义域名，在 Cloudflare Pages Dashboard 中配置
+# 或使用以下 Pages 项目级别的域名配置（需要先在 Cloudflare 添加域名）
+#
+# [[pages.domains]]
+# name = "yourdomain.com"
+#
+# [[pages.domains]]
+# name = "www.yourdomain.com"
+
+# 部署预览配置
+[env.preview]
+name = "beautifuljekyll-preview"
+vars = { ENVIRONMENT = "preview" }
+
+[env.production]
+name = "beautifuljekyll"
+vars = { ENVIRONMENT = "production" }
