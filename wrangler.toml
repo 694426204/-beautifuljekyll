@@ -1,47 +1,30 @@
 # Cloudflare Pages 配置文件
-# 用于通过 Wrangler CLI 部署和管理 Cloudflare Pages 项目
+# 专为静态站点部署优化
 # 文档：https://developers.cloudflare.com/pages/
 
 name = "beautifuljekyll"
 compatibility_date = "2024-01-01"
 
-# Pages 项目配置
-[vars]
-ENVIRONMENT = "production"
-
-# Pages 构建配置
-# 在 Cloudflare Pages Dashboard 中配置：
+# Pages 构建配置（在 Cloudflare Pages Dashboard 中设置）：
 # - 构建命令：bundle exec jekyll build
 # - 构建输出目录：_site
 # - 根目录：/
+# - 环境变量：JEKYLL_ENV=production
 
-# 环境变量（可在 Cloudflare Pages Dashboard 中设置）
-# - JEKYLL_ENV=production
-# - BUNDLE_WITHOUT=development:test
-# - RUBY_VERSION=3.2
-
-# Pages 功能配置
-[ai]
-binding = "AI"
-
-# 如需使用 Pages Functions，取消注释以下部分
-# [[path]]
-# path = "functions"
-
-# 如需自定义域名，在 Cloudflare Pages Dashboard 中配置
-# 或使用以下 Pages 项目级别的域名配置（需要先在 Cloudflare 添加域名）
-#
-# [[pages.domains]]
-# name = "yourdomain.com"
-#
-# [[pages.domains]]
-# name = "www.yourdomain.com"
+# 环境变量
+[vars]
+JEKYLL_ENV = "production"
 
 # 部署预览配置
 [env.preview]
 name = "beautifuljekyll-preview"
-vars = { ENVIRONMENT = "preview" }
+vars = { JEKYLL_ENV = "development" }
 
 [env.production]
 name = "beautifuljekyll"
-vars = { ENVIRONMENT = "production" }
+vars = { JEKYLL_ENV = "production" }
+
+# 说明：
+# 1. _headers 文件配置 HTTP 安全头和缓存策略
+# 2. _redirects 文件配置 URL 重定向
+# 3. 这两个文件会被 Cloudflare Pages 自动识别
